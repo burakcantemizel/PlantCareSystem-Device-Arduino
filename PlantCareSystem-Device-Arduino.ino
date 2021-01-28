@@ -94,17 +94,19 @@ void loop(){
  }
 
   //Sensör okumalari
-  //isik = analogRead(LDR);
-  //okunan_deger = analogRead(SICAKLIK);
-  //sicaklik_gerilim = (okunan_deger / 1023.0)*5000;
-  //sicaklik = sicaklik_gerilim/10.0;
-  //nem = analogRead(NEM);
-  //nem =  1024-nem;
-  //hareket = digitalRead(PIR);
-  hareket = random(2); // rastgele 0-1
-  isik = random(200,500); // 200-500 arası rastgele
-  sicaklik = random(15,30); //15-30 arası rastgele
-  nem = random(200,400); //200-400 arası rastgele
+  isik = analogRead(LDR);
+  okunan_deger = analogRead(SICAKLIK);
+  sicaklik_gerilim = (okunan_deger / 1023.0)*5000;
+  sicaklik = sicaklik_gerilim/10.0;
+  nem = analogRead(NEM);
+  nem =  1024-nem;
+  hareket = digitalRead(PIR);
+  
+  //Sensörsüz monitörde test etmek için
+  //hareket = random(2); // rastgele 0-1
+  //isik = random(200,500); // 200-500 arası rastgele
+  //sicaklik = random(15,30); //15-30 arası rastgele
+  //nem = random(200,400); //200-400 arası rastgele
   
   //Buzzer
   digitalWrite(BUZZER, buzzer);
